@@ -10,8 +10,8 @@ const openDb = () => {
   const pool = new Pool({
     user: process.env.DB_USER,
     host: process.env.DB_HOST,
-    database:
-      env === "development" ? process.env.DB_NAME : process.env.TESTDB_NAME,
+    database: process.env.DB_NAME,
+    // env === "development" ? process.env.DB_NAME : process.env.TESTDB_NAME,
     password: process.env.DB_PASSWORD,
     port: process.env.DB_PORT,
   });

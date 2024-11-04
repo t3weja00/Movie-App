@@ -4,11 +4,6 @@ import { expect } from "chai";
 const url = process.env.SERVER_URL;
 console.log("Server URL:", url);
 
-// before(async function () {
-//   await initializeTestDb();
-//   this.timeout(5000);
-// });
-
 describe("GET function test", () => {
   it("should get all tasks", async () => {
     const res = await fetch(url);
