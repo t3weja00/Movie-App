@@ -1,0 +1,32 @@
+{
+  "type": "module",
+  "name": "server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "testStart": "cross-env NODE_ENV=test nodemon index.js",
+    "devStart": "cross-env NODE_ENV=development nodemon index.js",
+    "test": "mocha *.test.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "jsonwebtoken": "^9.0.2",
+    "nodemon": "^3.1.7",
+    "pg": "^8.13.1"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.9",
+    "chai": "^5.1.2",
+    "cross-env": "^7.0.3",
+    "eslint-plugin-chai": "^0.0.1",
+    "mocha": "^10.7.3",
+    "ts-node": "^10.9.2"
+  }
+}
