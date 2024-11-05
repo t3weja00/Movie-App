@@ -1,6 +1,6 @@
 import { Router } from "express";
 import dotenv from "dotenv";
-import { registration, login } from "../controllers/userController.js";
+import { registration, login } from "../controllers/UserController.js";
 
 dotenv.config();
 
