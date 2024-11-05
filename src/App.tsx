@@ -2,6 +2,7 @@
 // import logo from './logo.svg';
 import './App.css';
 import Home from './Home';
+import MovieDetails from './components/MovieDetails'; // Import the MovieDetails component
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 function App() {
@@ -26,9 +27,12 @@ function App() {
 
   return (
     <BrowserRouter>
-      <Home />
+      <Routes>
+        <Route path="/" element={<Home />} /> {/* Set Home as the default route */}
+        <Route path="/movie/:id" element={<MovieDetails />} /> {/* Movie Details page */}
+      </Routes>
     </BrowserRouter>
-  )
+  );
 }
 
 export default App;
