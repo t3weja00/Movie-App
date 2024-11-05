@@ -1,5 +1,8 @@
 import { Link } from "react-router-dom";
 import { Navbar, Nav, NavDropdown, Container, Form, Row, Col, Button } from 'react-bootstrap';
+import PopularMovies from "./HomeComponents/PopularMovies.jsx";
+import TrendingMovies from "./HomeComponents/TrendingMovies.jsx";
+import PopularTVshows from "./HomeComponents/PopularTVshows.jsx";
 
 export default function Home() {
     return (
@@ -17,9 +20,9 @@ export default function Home() {
                     </NavDropdown>
 
                     <NavDropdown title="Categories" id="basic-nav-dropdown">
-                        <NavDropdown.Item as={Link}>Category 1</NavDropdown.Item>
-                        <NavDropdown.Item as={Link}>Category 2</NavDropdown.Item>
-                        <NavDropdown.Item as={Link}>Category 3</NavDropdown.Item>
+                        <NavDropdown.Item as={Link}>Popular movies</NavDropdown.Item>
+                        <NavDropdown.Item as={Link}>Trending movies</NavDropdown.Item>
+                        <NavDropdown.Item as={Link}>Popular TV shows</NavDropdown.Item>
                     </NavDropdown>
                 </Nav>
                 <Form inline>
@@ -41,80 +44,9 @@ export default function Home() {
             </Container>
             </Navbar>
 
-
-            <Container className="border border-1 border-dark rounded mt-5">
-                <Row className="fs-4">
-                    <Col xs={6} className="text-start fw-bold">
-                        Category 1
-                    </Col>
-                    <Col xs={6} className="text-end text-decoration-none text-dark" as={Link}>
-                        {'View all ->'}
-                    </Col>
-                </Row>
-                <Row>
-                    <Col lg={2} md={3} xs={4} className="text-center p-2 text-decoration-none text-dark" as={Link}>
-                        <img src="https://image.tmdb.org/t/p/w500/a26cQPRhJPX6GbWfQbvZdrrp9j9.jpg" className="img-fluid p-1"/>
-                        Fight Club
-                    </Col>
-                    <Col lg={2} md={3} xs={4} className="text-center p-2 text-decoration-none text-dark" as={Link}>
-                        <img src="https://image.tmdb.org/t/p/w500/a26cQPRhJPX6GbWfQbvZdrrp9j9.jpg" className="img-fluid p-1"/>
-                        Fight Club
-                    </Col>
-                    <Col lg={2} md={3} xs={4} className="text-center p-2 text-decoration-none text-dark" as={Link}>
-                        <img src="https://image.tmdb.org/t/p/w500/a26cQPRhJPX6GbWfQbvZdrrp9j9.jpg" className="img-fluid p-1"/>
-                        Fight Club
-                    </Col>
-                    <Col lg={2} xs={0} md={3} className="text-center p-2 d-none d-md-block text-decoration-none text-dark" as={Link}>
-                        <img src="https://image.tmdb.org/t/p/w500/a26cQPRhJPX6GbWfQbvZdrrp9j9.jpg" className="img-fluid p-1"/>
-                        Fight Club
-                    </Col>
-                    <Col lg={2} xs={0} className="text-center p-2 d-none d-lg-block text-decoration-none text-dark" as={Link}>
-                        <img src="https://image.tmdb.org/t/p/w500/a26cQPRhJPX6GbWfQbvZdrrp9j9.jpg" className="img-fluid p-1"/>
-                        Fight Club
-                    </Col>
-                    <Col lg={2} xs={0} className="text-center p-2 d-none d-lg-block text-decoration-none text-dark" as={Link}>
-                        <img src="https://image.tmdb.org/t/p/w500/a26cQPRhJPX6GbWfQbvZdrrp9j9.jpg" className="img-fluid p-1"/>
-                        Fight Club
-                    </Col>
-                </Row>
-            </Container>
-
-            <Container className="border border-1 border-dark rounded mt-5">
-                <Row className="fs-4">
-                    <Col xs={6} className="text-start fw-bold">
-                        Category 2
-                    </Col>
-                    <Col xs={6} className="text-end text-decoration-none text-dark" as={Link}>
-                        {'View all ->'}
-                    </Col>
-                </Row>
-                <Row>
-                    <Col lg={2} md={3} xs={4} className="text-center p-2 text-decoration-none text-dark" as={Link}>
-                        <img src="https://image.tmdb.org/t/p/original/gajva2L0rPYkEWjzgFlBXCAVBE5.jpg" className="img-fluid p-1"/>
-                        Blade Runner 2049
-                    </Col>
-                    <Col lg={2} md={3} xs={4} className="text-center p-2 text-decoration-none text-dark" as={Link}>
-                        <img src="https://image.tmdb.org/t/p/original/gajva2L0rPYkEWjzgFlBXCAVBE5.jpg" className="img-fluid p-1"/>
-                        Blade Runner 2049
-                    </Col>
-                    <Col lg={2} md={3} xs={4} className="text-center p-2 text-decoration-none text-dark" as={Link}>
-                        <img src="https://image.tmdb.org/t/p/original/gajva2L0rPYkEWjzgFlBXCAVBE5.jpg" className="img-fluid p-1"/>
-                        Blade Runner 2049
-                    </Col>
-                    <Col lg={2} xs={0} md={3} className="text-center p-2 d-none d-md-block text-decoration-none text-dark" as={Link}>
-                        <img src="https://image.tmdb.org/t/p/original/gajva2L0rPYkEWjzgFlBXCAVBE5.jpg" className="img-fluid p-1"/>
-                        Blade Runner 2049
-                    </Col>
-                    <Col lg={2} xs={0} className="text-center p-2 d-none d-lg-block text-decoration-none text-dark" as={Link}>
-                        <img src="https://image.tmdb.org/t/p/original/gajva2L0rPYkEWjzgFlBXCAVBE5.jpg" className="img-fluid p-1"/>
-                        Blade Runner 2049
-                    </Col>
-                    <Col lg={2} xs={0} className="text-center p-2 d-none d-lg-block text-decoration-none text-dark" as={Link}>
-                        <img src="https://image.tmdb.org/t/p/original/gajva2L0rPYkEWjzgFlBXCAVBE5.jpg" className="img-fluid p-1"/>
-                        Blade Runner 2049
-                    </Col>
-                </Row>
-            </Container>
+            <PopularMovies />
+            <TrendingMovies />
+            <PopularTVshows />
         </div>
     )
 }
