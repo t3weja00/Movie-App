@@ -1,5 +1,10 @@
 import { hash, compare } from "bcrypt";
-import { insertUser, searchUserByEmail } from "../models/User.js";
+import {
+  insertUser,
+  searchUserByEmail,
+  searchUserById,
+  deleteUserById,
+} from "../models/User.js";
 import { ApiError } from "../helpers/apiError.js";
 import jwt from "jsonwebtoken";
 const { sign } = jwt;
@@ -41,6 +46,37 @@ const login = async (req, res, next) => {
   }
 };
 
+const getUserProfile = async (req, res, next) => {
+  try {
+    const { id } = req.params;
+    const result = await searchUserById(id);
+    const user = result.rows[0];
+    const profile = createProfileObj(
+      user.id,
+      user.email,
+      user.password,
+      user.firstname,
+      user.lastname
+    );
+    return res.status(200).json(profile);
+  } catch (error) {
+    return next(error);
+  }
+};
+
+const deleteUser = async (req, res, next) => {
+  try {
+    const { id } = req.params;
+    const result = await deleteUserById(id);
+    console.log(result);
+    return res
+      .status(200)
+      .json({ id: id, message: `User ID ${id} deleted successfully.` });
+  } catch (error) {
+    return next(error);
+  }
+};
+
 const createUserObj = (id, email, token = undefined) => {
   return {
     id: id,
@@ -49,4 +85,14 @@ const createUserObj = (id, email, token = undefined) => {
   };
 };
 
-export { registration, login };
+const createProfileObj = (id, email, password, firstname, lastname) => {
+  return {
+    id: id,
+    email: email,
+    password: password,
+    firstname: firstname,
+    lastname: lastname,
+  };
+};
+
+export { registration, login, getUserProfile, deleteUser };

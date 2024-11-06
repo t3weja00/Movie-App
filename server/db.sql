@@ -58,9 +58,5 @@ CREATE TABLE favorite (
 );
 
 
-
-
-INSERT into task (description) values ('My test task');
-INSERT into task (description) values ('2nd task');
 -- SELECT * FROM task
 -- SELECT * FROM account

@@ -15,4 +15,14 @@ const searchUserByEmail = async (email) => {
   return result;
 };
 
-export { insertUser, searchUserByEmail };
+const searchUserById = async (id) => {
+  const result = await pool.query("SELECT * FROM account WHERE id = $1", [id]);
+  return result;
+};
+
+const deleteUserById = async (id) => {
+  const result = await pool.query("DELETE FROM account WHERE id = $1", [id]);
+  return result;
+};
+
+export { insertUser, searchUserByEmail, searchUserById, deleteUserById };
