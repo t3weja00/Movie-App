@@ -69,8 +69,23 @@ export default function Navigation() {
 						{suggestions.length > 0 && (
 							<ListGroup className="position-absolute w-100 mt-1" style={{ zIndex: 1000 }}>
 								{suggestions.map((item) => (
-									<ListGroup.Item key={item.id} as={Link} to={`/movie/${item.id}`} action>
-										{item.title} {item.release_date ? `(${item.release_date.split("-")[0]})` : ""}
+									<ListGroup.Item key={item.id} as={Link} to={`/movie/${item.id}`} action className="d-flex align-items-center">
+										{item.poster_path ? (
+											<img
+												src={`https://image.tmdb.org/t/p/w92${item.poster_path}`}
+												alt={item.title}
+												className="me-2"
+												style={{ width: "50px", height: "75px", objectFit: "cover" }}
+											/>
+										) : (
+											<div className="me-2" style={{ width: "50px", height: "75px", backgroundColor: "#ccc" }} />
+										)}
+										<div>
+											<div>{item.title}</div>
+											<div className="text-muted" style={{ fontSize: "0.9em" }}>
+												{item.release_date ? item.release_date.split("-")[0] : "N/A"}
+											</div>
+										</div>
 									</ListGroup.Item>
 								))}
 							</ListGroup>

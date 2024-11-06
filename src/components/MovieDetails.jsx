@@ -22,7 +22,8 @@ export default function MovieDetails() {
             <Navigation />
 
             <Container className="text-dark my-5">
-                <h1>{movie.title} ({new Date(movie.release_date).getFullYear()})</h1>
+                <h1>{movie.title}</h1>
+                <h4>{new Date(movie.release_date).getFullYear()}</h4>
                 <Row>
                     <Col md={4}>
                         <img 
